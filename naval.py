@@ -87,56 +87,18 @@ def placer(uneposX, uneposY, uneaxe, unesens, unetaille):
 
 def positionnement():
     # Placement du porte avion
-    while True:
-        leposX = position()
-        leposY = position()
-        lesens = sens()
-        leaxe = axe()
-        letaille = 5
-        if controlPositionVide(leposX, leposY) == True and controlPositionnement(leposX, leposY, leaxe,lesens, letaille):
-            placer(leposX, leposY, leaxe, lesens, letaille)
-            break
-    # Placement du croiseur
-    while True:
-        leposX = position()
-        leposY = position()
-        lesens = sens()
-        leaxe = axe()
-        letaille = 4
-        if controlPositionVide(leposX, leposY) == True and controlPositionnement(leposX, leposY, leaxe,lesens, letaille):
-            placer(leposX, leposY, leaxe, lesens, letaille)
-            break
-    # Placement du sous marins
-    while True:
-        leposX = position()
-        leposY = position()
-        lesens = sens()
-        leaxe = axe()
-        letaille = 3
-        if controlPositionVide(leposX, leposY) == True and controlPositionnement(leposX, leposY, leaxe,lesens, letaille):
-            placer(leposX, leposY, leaxe, lesens, letaille)
-            break
-    # Placement du contre torpilleur
-    while True:
-        leposX = position()
-        leposY = position()
-        lesens = sens()
-        leaxe = axe()
-        letaille = 3
-        if controlPositionVide(leposX, leposY) == True and controlPositionnement(leposX, leposY, leaxe,lesens, letaille):
-            placer(leposX, leposY, leaxe, lesens, letaille)
-            break
-    # Placement du torpilleur
-    while True:
-        leposX = position()
-        leposY = position()
-        lesens = sens()
-        leaxe = axe()
-        letaille = 2
-        if controlPositionVide(leposX, leposY) == True and controlPositionnement(leposX, leposY, leaxe,lesens, letaille):
-            placer(leposX, leposY, leaxe, lesens, letaille)
-            break
-
+    tab = [5,4,3,3,2]
+    for i in range(4):
+        while True:
+            leposX = position()
+            leposY = position()
+            lesens = sens()
+            leaxe = axe()
+            letaille = tab[i]
+            if controlPositionVide(leposX, leposY) == True and controlPositionnement(leposX, leposY, leaxe,lesens, letaille):
+                placer(leposX, leposY, leaxe, lesens, letaille)
+                break
+    
 
 G = initialisation(20)
 
